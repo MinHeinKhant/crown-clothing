@@ -21,7 +21,6 @@ export class SignIn extends Component {
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-    console.log(value);
   };
   render() {
     return (

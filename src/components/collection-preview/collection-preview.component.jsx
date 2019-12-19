@@ -10,11 +10,13 @@ const CollectionPreview = ({ title, items }) => {
     <div className="collection-preview">
       <h1 className="title">{title.toUpperCase()}</h1>
       <div className="preview">
-        {fourItems.map(({ id, ...others }) => (
-          <CollectionItem key={id} {...others}>
-            {others.name}
-          </CollectionItem>
-        ))}
+        {fourItems.map(({ id, ...others }) => {
+          return (
+            <CollectionItem key={id} {...others}>
+              {others.name}
+            </CollectionItem>
+          );
+        })}
       </div>
     </div>
   );
