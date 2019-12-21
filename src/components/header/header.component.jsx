@@ -5,8 +5,10 @@ import { connect } from "react-redux";
 import { auth } from "../../firebase/firebase.utils";
 import "./header.styles.scss";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
+import CartIcon from "../cart-icon/cart-icon.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, showCartDropdown }) => {
   return (
     <div className="header">
       <NavLink to="/" className="logo-container">
@@ -28,14 +30,21 @@ const Header = ({ currentUser }) => {
             SIGN IN
           </NavLink>
         )}
+        <CartIcon />
       </div>
+      {!showCartDropdown && <CartDropdown />}
     </div>
   );
 };
 
 const mapStateToProps = state => {
+  const {
+    user: { currentUser },
+    cart: { hidden }
+  } = state;
   return {
-    currentUser: state.user.currentUser
+    currentUser: currentUser,
+    showCartDropdown: hidden
   };
 };
 
