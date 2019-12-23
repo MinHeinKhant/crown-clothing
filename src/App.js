@@ -78,6 +78,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = ({ user }) => {
+  console.log("Iam user. I am being called");
   return {
     currentUser: user.currentUser
   };
