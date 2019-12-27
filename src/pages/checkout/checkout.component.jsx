@@ -10,7 +10,7 @@ import {
 } from "../../redux/cart/cart.selectors";
 
 const CheckoutPage = ({ cartItems, total }) => {
-  console.log(cartItems, total);
+  // console.log(cartItems, total);
   return (
     <div className="checkout-page">
       <div className="checkout-header">
