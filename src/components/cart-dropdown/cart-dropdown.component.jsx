@@ -16,7 +16,7 @@ const CartDropdown = ({
   // toggleCartHidden,
   ...others
 }) => {
-  console.log(others);
+  // console.log(others);
   return (
     <div className="cart-dropdown">
       <div className="cart-items">
