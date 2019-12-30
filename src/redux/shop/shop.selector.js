@@ -16,6 +16,7 @@ export const selectShopCollections = createSelector(
   shop => shop.collections
 );
 
+// collections -> Object , take keys from collections object, map those keys to value of those keys
 export const selectShopCollectionsForPreview = createSelector(
   selectShopCollections,
   collections => Object.keys(collections).map(key => collections[key])
