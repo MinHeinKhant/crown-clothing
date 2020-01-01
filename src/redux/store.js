@@ -26,7 +26,15 @@ import { persistStore } from "redux-persist";
 // Persist data in localstorage
 // const preloadedState = loadFromLocalStorage();
 
-const middlewares = [logger];
+// Before production build
+// const middlewares = [logger];
+
+// For production
+const middlewares = [];
+if (process.env.NODE_ENV === "development") {
+  middlewares.push(logger);
+}
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   rootReducer,
